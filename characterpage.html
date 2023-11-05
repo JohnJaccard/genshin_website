@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Information</title>
+    <link href='https://fonts.googleapis.com/css?family>Signika' rel='stylesheet'>
+    <link rel="stylesheet" type='text/css' href="./Content/stylecharacterpage.css" />
+</head>
+<body>
+<div class="dark-overlay">
+    <a href="index.html" id="return-button">
+        <img src="./Content/return.png" alt="Return" class="return-image">
+    </a>
+    <h1>Character Information</h1>
+</div>
+<div id="characterInfo">
+    <!-- Character information will be displayed here -->
+</div>
+<div id="levelInfo">
+    <div class="variable-container">
+        <p class="variable-label">Start Level:</p>
+        <button id="decrementStartLevel">-</button>
+        <span id="startLevel"><b>1</b></span>
+        <button id="incrementStartLevel">+</button>
+    </div>
+    <div class="slider-container">
+        <input type="range" id="startLevelSlider" min="1" max="90" step="1" value="1">
+    </div>
+    <div class="variable-container">
+        <p class="variable-label">Max Level:</p>
+        <button id="decrementMaxLevel">-</button>
+        <span id="maxLevel"><b>1</b></span>
+        <button id="incrementMaxLevel">+</button>
+    </div>
+    <div class="slider-container">
+        <input type="range" id="maxLevelSlider" min="1" max="90" step="1" value="1">
+    </div>
+    <div class="total-exp">
+        <span id="expDifference">-</span>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var characterInfo = document.getElementById('characterInfo');
+
+        // Get the character name from the URL parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var characterName = urlParams.get('character');
+
+        // Fetch the character data from characters.json
+        fetch('./Content/characters.json')
+            .then(response => response.json())
+            .then(characterData => {
+                // Search for the character in the JSON data by name
+                var character = characterData.find(function(char) {
+                    return char.DisplayName === characterName;
+                });
+
+                if (character) {
+                    // Display the character information
+                    var characterImage = document.createElement('img');
+                    characterImage.classList.add('character-image');
+                    characterImage.src = './Content/Images/' + character.ImageUri;
+                    characterImage.alt = character.DisplayName;
+                    characterInfo.appendChild(characterImage);
+
+                    var characterNameElement = document.createElement('h2');
+                    characterNameElement.textContent = character.DisplayName;
+                    characterInfo.appendChild(characterNameElement);
+
+                    var characterElement = document.createElement('img');
+                    characterElement.classList.add('element-icon');
+                    characterElement.src = './Content/Images/Element_' + character.Element + '.png';
+                    characterElement.alt = character.Element;
+                    characterInfo.appendChild(characterElement);
+
+                    var characterRarity = document.createElement('p');
+                    characterRarity.textContent = 'Rarity: ' + character.Rarity + ' Stars';
+                    characterInfo.appendChild(characterRarity);
+
+                    var characterRegion = document.createElement('p');
+                    characterRegion.textContent = 'Region: ' + character.Region.join(', ');
+                    characterInfo.appendChild(characterRegion);
+
+                    var characterWeapon = document.createElement('p');
+                    characterWeapon.textContent = 'Weapon: ' + character.Weapon;
+                    characterInfo.appendChild(characterWeapon);
+
+                    // Load talent book data from talentbooks.json
+                    fetch('./Content/talentbooks.json')
+                        .then(response => response.json())
+                        .then(talentbookData => {
+                            // Find the talent book information based on the character's talentbookId
+                            var talentbookInfo = talentbookData.find(function (book) {
+                                return book.Id === character.talentbookId;
+                            });
+
+                            if (talentbookInfo) {
+                                // Display talent book information
+                                var talentbookName = document.createElement('p');
+                                talentbookName.textContent = 'Talent Books: ';
+                                talentbookName.classList.add('days-talent-book-description'); // Apply the styling class
+                                characterInfo.appendChild(talentbookName);
+
+                                // Display green talent book name
+                                var greentalentbookName = document.createElement('p');
+                                greentalentbookName.textContent = talentbookInfo.Name.green;
+                                greentalentbookName.classList.add('green-talent-book-name'); // Apply the styling class
+                                characterInfo.appendChild(greentalentbookName);
+
+                                // Display blue talent book name
+                                var bluetalentbookName = document.createElement('p');
+                                bluetalentbookName.textContent = talentbookInfo.Name.blue;
+                                bluetalentbookName.classList.add('blue-talent-book-name'); // Apply the styling class
+                                characterInfo.appendChild(bluetalentbookName);
+
+                                // Display violet talent book name
+                                var violettalentbookName = document.createElement('p');
+                                violettalentbookName.textContent = talentbookInfo.Name.violet;
+                                violettalentbookName.classList.add('violet-talent-book-name'); // Apply the styling class
+                                characterInfo.appendChild(violettalentbookName);
+
+                                // Talent books days
+                                var daystalentbookDescription = document.createElement('p');
+                                daystalentbookDescription.textContent = 'Talent Book days: ';
+                                daystalentbookDescription.classList.add('days-talent-book-description'); // Apply the styling class
+                                characterInfo.appendChild(daystalentbookDescription);
+
+                                var daystalentbook = document.createElement('p');
+                                daystalentbook.textContent = talentbookInfo.Days;
+                                characterInfo.appendChild(daystalentbook);
+                            } else {
+                                // If talent book data was not found, display a message
+                                var talentbookName = document.createElement('p');
+                                talentbookName.textContent = 'Talent Book: Not Found';
+                                characterInfo.appendChild(talentbookName);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error loading talent book JSON data:', error);
+                        });
+                } else {
+                    // If character data was not found, display a message
+                    characterInfo.textContent = 'Character not found.';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading character JSON data:', error);
+            });
+    });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var characterInfo = document.getElementById('characterInfo');
+        var startLevelElement = document.getElementById('startLevel');
+        var maxLevelElement = document.getElementById('maxLevel');
+        var startLevelSlider = document.getElementById('startLevelSlider');
+        var maxLevelSlider = document.getElementById('maxLevelSlider');
+        var incrementStartLevelButton = document.getElementById('incrementStartLevel');
+        var decrementStartLevelButton = document.getElementById('decrementStartLevel');
+        var incrementMaxLevelButton = document.getElementById('incrementMaxLevel');
+        var decrementMaxLevelButton = document.getElementById('decrementMaxLevel');
+        var totalExpElement = document.querySelector('.total-exp'); // Changed to select the total experience points element
+        var expDifferenceElement = document.getElementById('expDifference');
+
+        // Load the exp data from ".\Content\exp.json"
+        fetch('./Content/exp.json')
+            .then(response => response.json())
+            .then(expData => {
+                // Function to find Total EXP by Level
+                function findTotalExpByLevel(level) {
+                    return expData.Levels.find(entry => entry.Level === level)?.['Total EXP'] || 0;
+                }
+
+                // Initialize startLevel and maxLevel
+                var startLevel = 1;
+                var maxLevel = 1;
+
+                // Function to update the displayed values
+                function updateDisplayedValues() {
+                    startLevelElement.innerHTML = '<b>' + startLevel + '</b>';
+                    maxLevelElement.innerHTML = '<b>' + maxLevel + '</b';
+                    startLevelSlider.value = startLevel;
+                    maxLevelSlider.value = maxLevel;
+
+                    // Check constraints for startLevel and maxLevel
+                    if (startLevel === 1) {
+                        decrementStartLevelButton.style.display = 'none';
+                    } else if (startLevel < 90) {
+                        decrementStartLevelButton.style.display = 'block';
+                    }
+
+                    if (startLevel === maxLevel || startLevel === 90) {
+                        incrementStartLevelButton.style.display = 'none';
+                    } else if (startLevel < maxLevel) {
+                        incrementStartLevelButton.style.display = 'block';
+                    }
+
+                    if (maxLevel === 90) {
+                        incrementMaxLevelButton.style.display = 'none';
+                    } else if (maxLevel >= startLevel) {
+                        incrementMaxLevelButton.style.display = 'block';
+                    }
+                    if (maxLevel === startLevel || maxLevel === 1) {
+                        decrementMaxLevelButton.style.display = 'none';
+                    } else if (maxLevel > startLevel) {
+                        decrementMaxLevelButton.style.display = 'block';
+                    }
+
+                    // Find Total EXP for startLevel and maxLevel
+                    var startLevelExp = findTotalExpByLevel(startLevel);
+                    var maxLevelExp = findTotalExpByLevel(maxLevel);
+
+                    // Calculate experience point difference
+                    var expDifference = maxLevelExp - startLevelExp;
+
+                    // Update the total experience points and the experience point difference
+                    totalExpElement.textContent = `${expDifference} Exp`;
+                }
+
+                // Add event listeners for increment/decrement buttons
+                incrementStartLevelButton.addEventListener('click', function() {
+                    if (startLevel < maxLevel && startLevel < 90) {
+                        startLevel++;
+                        updateDisplayedValues();
+                    }
+                });
+
+                decrementStartLevelButton.addEventListener('click', function() {
+                    if (startLevel <= maxLevel && startLevel > 1) {
+                        startLevel--;
+                        updateDisplayedValues();
+                    }
+                });
+
+                incrementMaxLevelButton.addEventListener('click', function() {
+                    if (maxLevel < 90) {
+                        maxLevel++;
+                        updateDisplayedValues();
+                    }
+                });
+
+                decrementMaxLevelButton.addEventListener('click', function() {
+                    if (maxLevel > startLevel && maxLevel > 1) {
+                        maxLevel--;
+                        updateDisplayedValues();
+                    }
+                });
+
+                // Add event listeners for sliders
+                startLevelSlider.addEventListener('input', function() {
+                    startLevel = parseInt(startLevelSlider.value, 10);
+                    if (startLevel > maxLevel) {
+                        startLevel = maxLevel;
+                    }
+                    updateDisplayedValues();
+                });
+
+                maxLevelSlider.addEventListener('input', function() {
+                    maxLevel = parseInt(maxLevelSlider.value, 10);
+                    if (maxLevel < startLevel) {
+                        maxLevel = startLevel;
+                    }
+                    updateDisplayedValues();
+                });
+
+                // Update displayed values initially
+                updateDisplayedValues();
+            });
+    });
+
+</script>
+</body>
+</html>

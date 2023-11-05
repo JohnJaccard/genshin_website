@@ -10,6 +10,7 @@
     "Rarity": 5,
     "Element": "Geo",
     "Weapon": "Sword",
+    "talentbookId": 3,
     "Region": [
       "Mondstadt"
     ]
@@ -25,6 +26,7 @@
     "Rarity": 5,
     "Element": "Dendro",
     "Weapon": "Sword",
+    "talentbookId": 11,
     "Region": [
       "Sumeru"
     ]
@@ -40,6 +42,7 @@
     "Rarity": 5,
     "Element": "Cryo",
     "Weapon": "Bow",
+    "talentbookId": 1,
     "Region": [
       "Crossover"
     ]
@@ -55,6 +58,7 @@
     "Rarity": 4,
     "Element": "Pyro",
     "Weapon": "Bow",
+    "talentbookId": 1,
     "Region": [
       "Mondstadt"
     ]
@@ -71,6 +75,7 @@
     "Rarity": 5,
     "Element": "Geo",
     "Weapon": "Claymore",
+    "talentbookId": 8,
     "Region": [
       "Inazuma"
     ]
@@ -86,6 +91,7 @@
     "Rarity": 5,
     "Element": "Dendro",
     "Weapon": "Catalyst",
+    "talentbookId": 6,
     "Region": [
       "Liyue"
     ]
@@ -101,6 +107,7 @@
     "Rarity": 4,
     "Element": "Hydro",
     "Weapon": "Catalyst",
+    "talentbookId": 1,
     "Region": [
       "Mondstadt"
     ]
@@ -116,6 +123,7 @@
     "Rarity": 4,
     "Element": "Electro",
     "Weapon": "Claymore",
+    "talentbookId": 6,
     "Region": [
       "Liyue"
     ]
@@ -131,6 +139,7 @@
     "Rarity": 4,
     "Element": "Pyro",
     "Weapon": "Sword",
+    "talentbookId": 2,
     "Region": [
       "Mondstadt"
     ]
@@ -146,6 +155,7 @@
     "Rarity": 4,
     "Element": "Hydro",
     "Weapon": "Polearm",
+    "talentbookId": 10,
     "Region": [
       "Sumeru"
     ]
@@ -158,9 +168,9 @@
     ],
     "ReleaseDate": "0001-01-01T00:00:00",
     "ImageUri": "Character_Charlotte_Thumb.webp",
-    "Rarity": 0,
+    "Rarity": 4,
     "Element": "Cryo",
-    "Weapon": "",
+    "Weapon": "Catalyst",
     "Region": [
       "Fontaine"
     ]
@@ -176,6 +186,7 @@
     "Rarity": 4,
     "Element": "Cryo",
     "Weapon": "Claymore",
+    "talentbookId": 5,
     "Region": [
       "Liyue"
     ]
@@ -190,7 +201,7 @@
     "ImageUri": "Character_Clorinde_Thumb.webp",
     "Rarity": 0,
     "Element": "Electro",
-    "Weapon": "",
+    "Weapon": "Sword",
     "Region": [
       "Fontaine"
     ]
@@ -206,6 +217,7 @@
     "Rarity": 4,
     "Element": "Dendro",
     "Weapon": "Bow",
+    "talentbookId": 12,
     "Region": [
       "Sumeru"
     ]
@@ -221,6 +233,7 @@
     "Rarity": 5,
     "Element": "Electro",
     "Weapon": "Polearm",
+    "talentbookId": 10,
     "Region": [
       "Sumeru"
     ]
@@ -236,6 +249,7 @@
     "Rarity": 5,
     "Element": "Pyro",
     "Weapon": "Claymore",
+    "talentbookId": 12,
     "Region": [
       "Sumeru"
     ]
@@ -251,6 +265,7 @@
     "Rarity": 5,
     "Element": "Pyro",
     "Weapon": "Claymore",
+    "talentbookId": 2,
     "Region": [
       "Mondstadt"
     ]
@@ -266,6 +281,7 @@
     "Rarity": 4,
     "Element": "Cryo",
     "Weapon": "Bow",
+    "talentbookId": 1,
     "Region": [
       "Mondstadt"
     ]
@@ -281,6 +297,7 @@
     "Rarity": 4,
     "Element": "Electro",
     "Weapon": "Claymore",
+    "talentbookId": 11,
     "Region": [
       "Sumeru"
     ]
@@ -296,6 +313,7 @@
     "Rarity": 5,
     "Element": "Cryo",
     "Weapon": "Claymore",
+    "talentbookId": 2,
     "Region": [
       "Mondstadt"
     ]
@@ -311,6 +329,7 @@
     "Rarity": 4,
     "Element": "Anemo",
     "Weapon": "Bow",
+    "talentbookId": 10,
     "Region": [
       "Sumeru"
     ]
@@ -326,6 +345,7 @@
     "Rarity": 4,
     "Element": "Electro",
     "Weapon": "Bow",
+    "talentbookId": 3,
     "Region": [
       "Mondstadt"
     ]
@@ -341,6 +361,7 @@
     "Rarity": 4,
     "Element": "Cryo",
     "Weapon": "Claymore",
+    "talentbookId": 14,
     "Region": [
       "Fontaine"
     ]
@@ -354,9 +375,10 @@
     ],
     "ReleaseDate": "0001-01-01T00:00:00",
     "ImageUri": "Character_Furina_Thumb.webp",
-    "Rarity": 0,
+    "Rarity": 5,
     "Element": "Hydro",
-    "Weapon": "",
+    "Weapon": "Sword",
+    "talentbookId": 14,
     "Region": [
       "Fontaine"
     ]
@@ -372,6 +394,7 @@
     "Rarity": 5,
     "Element": "Cryo",
     "Weapon": "Bow",
+    "talentbookId": 5,
     "Region": [
       "Liyue"
     ]
@@ -387,6 +410,7 @@
     "Rarity": 4,
     "Element": "Geo",
     "Weapon": "Bow",
+    "talentbookId": 9,
     "Region": [
       "Inazuma"
     ]
@@ -403,6 +427,7 @@
     "Rarity": 5,
     "Element": "Pyro",
     "Weapon": "Polearm",
+    "talentbookId": 5,
     "Region": [
       "Liyue"
     ]
@@ -418,6 +443,7 @@
     "Rarity": 5,
     "Element": "Anemo",
     "Weapon": "Sword",
+    "talentbookId": 2,
     "Region": [
       "Mondstadt"
     ]
@@ -434,6 +460,7 @@
     "Rarity": 5,
     "Element": "Anemo",
     "Weapon": "Sword",
+    "talentbookId": 5,
     "Region": [
       "Inazuma"
     ]
@@ -449,6 +476,7 @@
     "Rarity": 4,
     "Element": "Cryo",
     "Weapon": "Sword",
+    "talentbookId": 3,
     "Region": [
       "MondstadtKhaenri'ah"
     ]
@@ -465,6 +493,7 @@
     "Rarity": 5,
     "Element": "Cryo",
     "Weapon": "Sword",
+    "talentbookId": 8,
     "Region": [
       "Inazuma"
     ]
@@ -481,6 +510,7 @@
     "Rarity": 5,
     "Element": "Hydro",
     "Weapon": "Sword",
+    "talentbookId": 8,
     "Region": [
       "Inazuma"
     ]
@@ -496,6 +526,7 @@
     "Rarity": 4,
     "Element": "Dendro",
     "Weapon": "Claymore",
+    "talentbookId": 11,
     "Region": [
       "Sumeru"
     ]
@@ -511,6 +542,7 @@
     "Rarity": 5,
     "Element": "Electro",
     "Weapon": "Sword",
+    "talentbookId": 4,
     "Region": [
       "Liyue"
     ]
@@ -526,6 +558,7 @@
     "Rarity": 4,
     "Element": "Dendro",
     "Weapon": "Sword",
+    "talentbookId": 7,
     "Region": [
       "Inazuma"
     ]
@@ -541,6 +574,7 @@
     "Rarity": 5,
     "Element": "Pyro",
     "Weapon": "Catalyst",
+    "talentbookId": 1,
     "Region": [
       "Mondstadt"
     ]
@@ -557,6 +591,7 @@
     "Rarity": 4,
     "Element": "Electro",
     "Weapon": "Bow",
+    "talentbookId": 8,
     "Region": [
       "Inazuma"
     ]
@@ -573,6 +608,7 @@
     "Rarity": 4,
     "Element": "Electro",
     "Weapon": "Sword",
+    "talentbookId": 8,
     "Region": [
       "Inazuma"
     ]
@@ -588,6 +624,7 @@
     "Rarity": 4,
     "Element": "Cryo",
     "Weapon": "Sword",
+    "talentbookId": 11,
     "Region": [
       "Sumeru"
     ]
@@ -603,6 +640,7 @@
     "Rarity": 4,
     "Element": "Electro",
     "Weapon": "Catalyst",
+    "talentbookId": 3,
     "Region": [
       "Mondstadt"
     ]
@@ -618,6 +656,7 @@
     "Rarity": 4,
     "Element": "Anemo",
     "Weapon": "Sword",
+    "talentbookId": 15,
     "Region": [
       "Fontaine"
     ]
@@ -633,6 +672,7 @@
     "Rarity": 5,
     "Element": "Pyro",
     "Weapon": "Bow",
+    "talentbookId": 13,
     "Region": [
       "Fontaine"
     ]
@@ -648,6 +688,7 @@
     "Rarity": 4,
     "Element": "Cryo",
     "Weapon": "Polearm",
+    "talentbookId": 3,
     "Region": [
       "Mondstadt"
     ]
@@ -663,6 +704,7 @@
     "Rarity": 5,
     "Element": "Hydro",
     "Weapon": "Catalyst",
+    "talentbookId": 2,
     "Region": [
       "Mondstadt"
     ]
@@ -679,10 +721,29 @@
     "Rarity": 5,
     "Element": "Dendro",
     "Weapon": "Catalyst",
+    "talentbookId": 11,
     "Region": [
       "Sumeru"
     ]
   },
+
+  {
+    "Id": 76,
+    "DisplayName": "Neuvillette",
+    "Keys": [
+      "neuvillette"
+    ],
+    "ReleaseDate": "0001-01-01T00:00:00",
+    "ImageUri": "Character_Neuvillette_Thumb.png",
+    "Rarity": 5,
+    "Element": "Hydro",
+    "Weapon": "Catalyst",
+    "talentbookId": 13,
+    "Region": [
+      "Fontaine"
+    ]
+  },
+
   {
     "Id": 70,
     "DisplayName": "Navia",
@@ -691,9 +752,9 @@
     ],
     "ReleaseDate": "0001-01-01T00:00:00",
     "ImageUri": "Character_Navia_Thumb.webp",
-    "Rarity": 0,
+    "Rarity": 5,
     "Element": "Geo",
-    "Weapon": "",
+    "Weapon": "Claymore",
     "Region": [
       "Fontaine"
     ]
@@ -709,6 +770,7 @@
     "Rarity": 5,
     "Element": "Hydro",
     "Weapon": "Sword",
+    "talentbookId": 12,
     "Region": [
       "Sumeru"
     ]
@@ -724,6 +786,7 @@
     "Rarity": 4,
     "Element": "Geo",
     "Weapon": "Catalyst",
+    "talentbookId": 4,
     "Region": [
       "Liyue"
     ]
@@ -739,24 +802,10 @@
     "Rarity": 4,
     "Element": "Geo",
     "Weapon": "Claymore",
+    "talentbookId": 2,
     "Region": [
       "Mondstadt"
     ]
-  },
-  {
-    "Id": 69,
-    "DisplayName": "Paimon",
-    "Keys": [
-      "paimon",
-      "emergency",
-      "food"
-    ],
-    "ReleaseDate": "2020-09-28T00:00:00",
-    "ImageUri": "Character_Paimon_Thumb.png",
-    "Rarity": 0,
-    "Element": "",
-    "Weapon": "",
-    "Region": []
   },
   {
     "Id": 44,
@@ -769,6 +818,7 @@
     "Rarity": 5,
     "Element": "Cryo",
     "Weapon": "Sword",
+    "talentbookId": 4,
     "Region": [
       "Liyue"
     ]
@@ -785,6 +835,7 @@
     "Rarity": 5,
     "Element": "Electro",
     "Weapon": "Polearm",
+    "talentbookId": 9,
     "Region": [
       "Inazuma"
     ]
@@ -800,6 +851,7 @@
     "Rarity": 4,
     "Element": "Electro",
     "Weapon": "Claymore",
+    "talentbookId": 2,
     "Region": [
       "Mondstadt"
     ]
@@ -815,6 +867,7 @@
     "Rarity": 4,
     "Element": "Cryo",
     "Weapon": "Polearm",
+    "talentbookId": 3,
     "Region": [
       "Mondstadt"
     ]
@@ -831,6 +884,7 @@
     "Rarity": 5,
     "Element": "Hydro",
     "Weapon": "Catalyst",
+    "talentbookId": 7,
     "Region": [
       "Inazuma"
     ]
@@ -846,6 +900,7 @@
     "Rarity": 4,
     "Element": "Anemo",
     "Weapon": "Claymore",
+    "talentbookId": 9,
     "Region": [
       "Inazuma"
     ]
@@ -861,6 +916,7 @@
     "Rarity": 5,
     "Element": "Cryo",
     "Weapon": "Polearm",
+    "talentbookId": 4,
     "Region": [
       "Liyue"
     ]
@@ -877,6 +933,7 @@
     "Rarity": 4,
     "Element": "Anemo",
     "Weapon": "Catalyst",
+    "talentbookId": 7,
     "Region": [
       "Inazuma"
     ]
@@ -892,6 +949,7 @@
     "Rarity": 4,
     "Element": "Anemo",
     "Weapon": "Catalyst",
+    "talentbookId": 1,
     "Region": [
       "Mondstadt"
     ]
@@ -907,6 +965,7 @@
     "Rarity": 5,
     "Element": "Hydro",
     "Weapon": "Bow",
+    "talentbookId": 1,
     "Region": [
       "Snezhnaya"
     ]
@@ -922,6 +981,7 @@
     "Rarity": 4,
     "Element": "Pyro",
     "Weapon": "Polearm",
+    "talentbookId": 7,
     "Region": [
       "Inazuma"
     ]
@@ -937,30 +997,14 @@
     "Rarity": 5,
     "Element": "Dendro",
     "Weapon": "Bow",
+    "talentbookId": 10,
     "Region": [
       "Sumeru"
     ]
   },
   {
-    "Id": 57,
-    "DisplayName": "Traveler (Female)",
-    "Keys": [
-      "traveler",
-      "(female)",
-      "lumine"
-    ],
-    "ReleaseDate": "0001-01-01T00:00:00",
-    "ImageUri": "Character_Traveler_Thumb.png",
-    "Rarity": 5,
-    "Element": "Anemo",
-    "Weapon": "Sword",
-    "Region": [
-      "Outlander"
-    ]
-  },
-  {
     "Id": 56,
-    "DisplayName": "Traveler (Male)",
+    "DisplayName": "Traveler",
     "Keys": [
       "traveler",
       "(male)",
@@ -971,6 +1015,7 @@
     "Rarity": 5,
     "Element": "Anemo",
     "Weapon": "Sword",
+    "talentbookId": 1,
     "Region": [
       "Outlander"
     ]
@@ -986,8 +1031,25 @@
     "Rarity": 5,
     "Element": "Anemo",
     "Weapon": "Bow",
+    "talentbookId": 3,
     "Region": [
       "Mondstadt"
+    ]
+  },
+  {
+    "Id": 77,
+    "DisplayName": "Wriothesley",
+    "Keys": [
+      "wriothesley"
+    ],
+    "ReleaseDate": "0001-01-01T00:00:00",
+    "ImageUri": "Character_Wriothesley_Thumb.png",
+    "Rarity": 5,
+    "Element": "Cryo",
+    "Weapon": "Catalyst",
+    "talentbookId": 15,
+    "Region": [
+      "Fontaine"
     ]
   },
   {
@@ -1001,10 +1063,9 @@
     "Rarity": 5,
     "Element": "Anemo",
     "Weapon": "Catalyst",
+    "talentbookId": 12,
     "Region": [
-      "Sumeru",
-      "Snezhnaya",
-      "Inazuma"
+      "Sumeru"
     ]
   },
   {
@@ -1018,6 +1079,7 @@
     "Rarity": 4,
     "Element": "Pyro",
     "Weapon": "Polearm",
+    "talentbookId": 5,
     "Region": [
       "Liyue"
     ]
@@ -1033,6 +1095,7 @@
     "Rarity": 5,
     "Element": "Anemo",
     "Weapon": "Polearm",
+    "talentbookId": 4,
     "Region": [
       "Liyue"
     ]
@@ -1048,6 +1111,7 @@
     "Rarity": 4,
     "Element": "Hydro",
     "Weapon": "Sword",
+    "talentbookId": 6,
     "Region": [
       "Liyue"
     ]
@@ -1063,6 +1127,7 @@
     "Rarity": 4,
     "Element": "Pyro",
     "Weapon": "Claymore",
+    "talentbookId": 6,
     "Region": [
       "Liyue"
     ]
@@ -1079,6 +1144,7 @@
     "Rarity": 5,
     "Element": "Electro",
     "Weapon": "Catalyst",
+    "talentbookId": 9,
     "Region": [
       "Inazuma"
     ]
@@ -1094,6 +1160,7 @@
     "Rarity": 4,
     "Element": "Pyro",
     "Weapon": "Catalyst",
+    "talentbookId": 6,
     "Region": [
       "Liyue"
     ]
@@ -1109,6 +1176,7 @@
     "Rarity": 4,
     "Element": "Dendro",
     "Weapon": "Polearm",
+    "talentbookId": 5,
     "Region": [
       "Liyue"
     ]
@@ -1124,6 +1192,7 @@
     "Rarity": 5,
     "Element": "Hydro",
     "Weapon": "Bow",
+    "talentbookId": 4,
     "Region": [
       "Liyue"
     ]
@@ -1139,6 +1208,7 @@
     "Rarity": 5,
     "Element": "Pyro",
     "Weapon": "Bow",
+    "talentbookId": 7,
     "Region": [
       "Inazuma"
     ]
@@ -1155,6 +1225,7 @@
     "Rarity": 4,
     "Element": "Geo",
     "Weapon": "Polearm",
+    "talentbookId": 5,
     "Region": [
       "Liyue"
     ]
@@ -1170,8 +1241,10 @@
     "Rarity": 5,
     "Element": "Geo",
     "Weapon": "Polearm",
+    "talentbookId": 6,
     "Region": [
       "Liyue"
     ]
   }
+
 ]
