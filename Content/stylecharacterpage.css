@@ -149,8 +149,28 @@ img.character-image, img.element-icon {
 .slider-label input[type="range"] {
     width: 100px;
 }
+
 .total-exp {
     font-weight: bold;
     font-size: 20px;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total-mora {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.exp-text {
+    display: flex;
+    align-items: center;
+}
+
+.expbook-image {
+    margin-left: 10px; /* Adjust margin as needed for spacing */
 }

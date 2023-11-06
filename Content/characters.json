@@ -1004,11 +1004,9 @@
   },
   {
     "Id": 56,
-    "DisplayName": "Traveler",
+    "DisplayName": "Anemo Traveler",
     "Keys": [
-      "traveler",
-      "(male)",
-      "aether"
+      "traveler"
     ],
     "ReleaseDate": "0001-01-01T00:00:00",
     "ImageUri": "Character_Traveler_Thumb.png",
@@ -1016,6 +1014,70 @@
     "Element": "Anemo",
     "Weapon": "Sword",
     "talentbookId": 1,
+    "Region": [
+      "Outlander"
+    ]
+  },
+  {
+    "Id": 57,
+    "DisplayName": "Geo Traveler",
+    "Keys": [
+      "traveler"
+    ],
+    "ReleaseDate": "0001-01-01T00:00:00",
+    "ImageUri": "Character_Traveler_Thumb.png",
+    "Rarity": 5,
+    "Element": "Geo",
+    "Weapon": "Sword",
+    "talentbookId": 4,
+    "Region": [
+      "Outlander"
+    ]
+  },
+  {
+    "Id": 78,
+    "DisplayName": "Electro Traveler",
+    "Keys": [
+      "traveler"
+    ],
+    "ReleaseDate": "0001-01-01T00:00:00",
+    "ImageUri": "Character_Traveler_Thumb.png",
+    "Rarity": 5,
+    "Element": "Electro",
+    "Weapon": "Sword",
+    "talentbookId": 7,
+    "Region": [
+      "Outlander"
+    ]
+  },
+  {
+    "Id": 79,
+    "DisplayName": "Dendro Traveler",
+    "Keys": [
+      "traveler"
+    ],
+    "ReleaseDate": "0001-01-01T00:00:00",
+    "ImageUri": "Character_Traveler_Thumb.png",
+    "Rarity": 5,
+    "Element": "Dendro",
+    "Weapon": "Sword",
+    "talentbookId": 10,
+    "Region": [
+      "Outlander"
+    ]
+  },
+  {
+    "Id": 80,
+    "DisplayName": "Hydro Traveler",
+    "Keys": [
+      "traveler"
+    ],
+    "ReleaseDate": "0001-01-01T00:00:00",
+    "ImageUri": "Character_Traveler_Thumb.png",
+    "Rarity": 5,
+    "Element": "Hydro",
+    "Weapon": "Sword",
+    "talentbookId": 13,
     "Region": [
       "Outlander"
     ]
@@ -1246,5 +1308,4 @@
       "Liyue"
     ]
   }
-
 ]

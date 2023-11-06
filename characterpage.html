@@ -35,13 +35,23 @@
         <input type="range" id="maxLevelSlider" min="1" max="90" step="1" value="1">
     </div>
     <div class="total-exp">
-        <span id="expDifference">-</span>
+        <div class="exp-text">
+            <span id="expbookDifference">-</span>
+            <img class="expbook-image" src="./Content/Images/expbook.png" alt="Exp Book" width="30" height="30">
+        </div>
+        <div class="exp-text">
+            <span id="mora">-</span>
+            <img class="expbook-image" src="./Content/Images/mora.png" alt="Mora" width="30" height="30">
+        </div>
+        <div id="materials-list" class="materials-list">
+            <!-- Materials will be displayed here -->
+        </div>
     </div>
 </div>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var characterInfo = document.getElementById('characterInfo');
+        var materialsList = document.getElementById('materials-list'); // Get materials list container
 
         // Get the character name from the URL parameter
         var urlParams = new URLSearchParams(window.location.search);
@@ -52,7 +62,7 @@
             .then(response => response.json())
             .then(characterData => {
                 // Search for the character in the JSON data by name
-                var character = characterData.find(function(char) {
+                var character = characterData.find(function (char) {
                     return char.DisplayName === characterName;
                 });
 
@@ -75,7 +85,7 @@
                     characterInfo.appendChild(characterElement);
 
                     var characterRarity = document.createElement('p');
-                    characterRarity.textContent = 'Rarity: ' + character.Rarity + ' Stars';
+                    characterRarity.textContent = 'Rarity: ' + character.Rarity + ' Star';
                     characterInfo.appendChild(characterRarity);
 
                     var characterRegion = document.createElement('p');
@@ -85,60 +95,6 @@
                     var characterWeapon = document.createElement('p');
                     characterWeapon.textContent = 'Weapon: ' + character.Weapon;
                     characterInfo.appendChild(characterWeapon);
-
-                    // Load talent book data from talentbooks.json
-                    fetch('./Content/talentbooks.json')
-                        .then(response => response.json())
-                        .then(talentbookData => {
-                            // Find the talent book information based on the character's talentbookId
-                            var talentbookInfo = talentbookData.find(function (book) {
-                                return book.Id === character.talentbookId;
-                            });
-
-                            if (talentbookInfo) {
-                                // Display talent book information
-                                var talentbookName = document.createElement('p');
-                                talentbookName.textContent = 'Talent Books: ';
-                                talentbookName.classList.add('days-talent-book-description'); // Apply the styling class
-                                characterInfo.appendChild(talentbookName);
-
-                                // Display green talent book name
-                                var greentalentbookName = document.createElement('p');
-                                greentalentbookName.textContent = talentbookInfo.Name.green;
-                                greentalentbookName.classList.add('green-talent-book-name'); // Apply the styling class
-                                characterInfo.appendChild(greentalentbookName);
-
-                                // Display blue talent book name
-                                var bluetalentbookName = document.createElement('p');
-                                bluetalentbookName.textContent = talentbookInfo.Name.blue;
-                                bluetalentbookName.classList.add('blue-talent-book-name'); // Apply the styling class
-                                characterInfo.appendChild(bluetalentbookName);
-
-                                // Display violet talent book name
-                                var violettalentbookName = document.createElement('p');
-                                violettalentbookName.textContent = talentbookInfo.Name.violet;
-                                violettalentbookName.classList.add('violet-talent-book-name'); // Apply the styling class
-                                characterInfo.appendChild(violettalentbookName);
-
-                                // Talent books days
-                                var daystalentbookDescription = document.createElement('p');
-                                daystalentbookDescription.textContent = 'Talent Book days: ';
-                                daystalentbookDescription.classList.add('days-talent-book-description'); // Apply the styling class
-                                characterInfo.appendChild(daystalentbookDescription);
-
-                                var daystalentbook = document.createElement('p');
-                                daystalentbook.textContent = talentbookInfo.Days;
-                                characterInfo.appendChild(daystalentbook);
-                            } else {
-                                // If talent book data was not found, display a message
-                                var talentbookName = document.createElement('p');
-                                talentbookName.textContent = 'Talent Book: Not Found';
-                                characterInfo.appendChild(talentbookName);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error loading talent book JSON data:', error);
-                        });
                 } else {
                     // If character data was not found, display a message
                     characterInfo.textContent = 'Character not found.';
@@ -147,13 +103,8 @@
             .catch(error => {
                 console.error('Error loading character JSON data:', error);
             });
-    });
-
-
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var characterInfo = document.getElementById('characterInfo');
+    })
+    document.addEventListener('DOMContentLoaded', function () {
         var startLevelElement = document.getElementById('startLevel');
         var maxLevelElement = document.getElementById('maxLevel');
         var startLevelSlider = document.getElementById('startLevelSlider');
@@ -162,8 +113,6 @@
         var decrementStartLevelButton = document.getElementById('decrementStartLevel');
         var incrementMaxLevelButton = document.getElementById('incrementMaxLevel');
         var decrementMaxLevelButton = document.getElementById('decrementMaxLevel');
-        var totalExpElement = document.querySelector('.total-exp'); // Changed to select the total experience points element
-        var expDifferenceElement = document.getElementById('expDifference');
 
         // Load the exp data from ".\Content\exp.json"
         fetch('./Content/exp.json')
@@ -181,33 +130,15 @@
                 // Function to update the displayed values
                 function updateDisplayedValues() {
                     startLevelElement.innerHTML = '<b>' + startLevel + '</b>';
-                    maxLevelElement.innerHTML = '<b>' + maxLevel + '</b';
+                    maxLevelElement.innerHTML = '<b>' + maxLevel + '</b>';
                     startLevelSlider.value = startLevel;
                     maxLevelSlider.value = maxLevel;
 
                     // Check constraints for startLevel and maxLevel
-                    if (startLevel === 1) {
-                        decrementStartLevelButton.style.display = 'none';
-                    } else if (startLevel < 90) {
-                        decrementStartLevelButton.style.display = 'block';
-                    }
-
-                    if (startLevel === maxLevel || startLevel === 90) {
-                        incrementStartLevelButton.style.display = 'none';
-                    } else if (startLevel < maxLevel) {
-                        incrementStartLevelButton.style.display = 'block';
-                    }
-
-                    if (maxLevel === 90) {
-                        incrementMaxLevelButton.style.display = 'none';
-                    } else if (maxLevel >= startLevel) {
-                        incrementMaxLevelButton.style.display = 'block';
-                    }
-                    if (maxLevel === startLevel || maxLevel === 1) {
-                        decrementMaxLevelButton.style.display = 'none';
-                    } else if (maxLevel > startLevel) {
-                        decrementMaxLevelButton.style.display = 'block';
-                    }
+                    decrementStartLevelButton.style.display = startLevel > 1 ? 'block' : 'none';
+                    incrementStartLevelButton.style.display = startLevel < 90 && startLevel < maxLevel ? 'block' : 'none';
+                    decrementMaxLevelButton.style.display = maxLevel > 1 && maxLevel > startLevel ? 'block' : 'none';
+                    incrementMaxLevelButton.style.display = maxLevel < 90 ? 'block' : 'none';
 
                     // Find Total EXP for startLevel and maxLevel
                     var startLevelExp = findTotalExpByLevel(startLevel);
@@ -215,34 +146,39 @@
 
                     // Calculate experience point difference
                     var expDifference = maxLevelExp - startLevelExp;
+                    var expbookDifference = Math.round(expDifference / 20000);
+                    var mora = Math.round(expDifference / 5);
 
                     // Update the total experience points and the experience point difference
-                    totalExpElement.textContent = `${expDifference} Exp`;
+                    document.getElementById('expbookDifference').textContent = `${expbookDifference}`;
+                    // The updated line to sum the mora variables
+                    var totalMora = mora;
+                    document.getElementById('mora').textContent = `${totalMora}`;
                 }
 
                 // Add event listeners for increment/decrement buttons
-                incrementStartLevelButton.addEventListener('click', function() {
+                incrementStartLevelButton.addEventListener('click', function () {
                     if (startLevel < maxLevel && startLevel < 90) {
                         startLevel++;
                         updateDisplayedValues();
                     }
                 });
 
-                decrementStartLevelButton.addEventListener('click', function() {
+                decrementStartLevelButton.addEventListener('click', function () {
                     if (startLevel <= maxLevel && startLevel > 1) {
                         startLevel--;
                         updateDisplayedValues();
                     }
                 });
 
-                incrementMaxLevelButton.addEventListener('click', function() {
+                incrementMaxLevelButton.addEventListener('click', function () {
                     if (maxLevel < 90) {
                         maxLevel++;
                         updateDisplayedValues();
                     }
                 });
 
-                decrementMaxLevelButton.addEventListener('click', function() {
+                decrementMaxLevelButton.addEventListener('click', function () {
                     if (maxLevel > startLevel && maxLevel > 1) {
                         maxLevel--;
                         updateDisplayedValues();
@@ -250,7 +186,7 @@
                 });
 
                 // Add event listeners for sliders
-                startLevelSlider.addEventListener('input', function() {
+                startLevelSlider.addEventListener('input', function () {
                     startLevel = parseInt(startLevelSlider.value, 10);
                     if (startLevel > maxLevel) {
                         startLevel = maxLevel;
@@ -258,7 +194,7 @@
                     updateDisplayedValues();
                 });
 
-                maxLevelSlider.addEventListener('input', function() {
+                maxLevelSlider.addEventListener('input', function () {
                     maxLevel = parseInt(maxLevelSlider.value, 10);
                     if (maxLevel < startLevel) {
                         maxLevel = startLevel;
@@ -271,6 +207,106 @@
             });
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        var startLevel = 1;
+        var maxLevel = 1;
+        var elevationData;
+
+        // Load the elevation level data from "./Content/elevationlvl.json"
+        fetch('./Content/elevationlvl.json')
+            .then(response => response.json())
+            .then(data => {
+                elevationData = data;
+                calculateMaterialsAndMora();
+            });
+
+        function calculateMaterialsAndMora() {
+            // Get the materials and Mora based on the elevation level
+            var materials = [];
+            var mora = 0;
+
+            for (let i = startLevel; i <= maxLevel; i++) {
+                const elevation = elevationData.find(e => e.elevationlvl === i);
+                if (elevation) {
+                    elevation.materials.forEach(material => {
+                        if (material.itemname !== "Mora") {
+                            const existingMaterial = materials.find(m => m.itemname === material.itemname);
+                            if (existingMaterial) {
+                                existingMaterial.amount += material.amount;
+                            } else {
+                                materials.push({itemname: material.itemname, amount: material.amount});
+                            }
+                        } else {
+                            // Update Mora correctly
+                            mora += material.amount;
+                        }
+                    });
+                }
+            }
+
+            // Display the materials
+            var materialsList = document.getElementById('materials-list');
+            materialsList.innerHTML = '';
+
+            materials.forEach(material => {
+                var materialItem = document.createElement('p');
+                if (material.itemname === "mora") {
+                    // Create a container div for the amount and image
+                    var moraContainer = document.createElement('div');
+                    moraContainer.style.display = "flex";
+                    moraContainer.style.alignItems = "center";
+
+                    // Create a span for the amount
+                    var moraAmount = document.createElement('span');
+                    moraAmount.textContent = `${material.amount}`;
+                    moraContainer.appendChild(moraAmount);
+
+                    // Add an <img> element for Mora with the class "expbook-image"
+                    var moraImg = document.createElement('img');
+                    moraImg.classList.add('expbook-image');
+                    moraImg.src = './Content/Images/mora.png';
+                    moraImg.alt = "Mora";
+                    moraImg.width = 30;
+                    moraImg.height = 30;
+                    moraContainer.appendChild(moraImg);
+
+
+
+                    materialItem.appendChild(moraContainer);
+                } else {
+                    materialItem.textContent = `${material.amount}x ${material.itemname}`;
+                }
+                materialsList.appendChild(materialItem);
+            });
+
+            // Update the displayed Mora
+            document.getElementById('mora').textContent = `${mora}`;
+
+            // Calculate and update the Exp Books difference
+            var expbookDifference = Math.round(mora / 20000);
+            document.getElementById('expbookDifference').textContent = `${expbookDifference}`;
+        }
+
+        // Add event listeners for changes in startLevel and maxLevel
+        var startLevelSlider = document.getElementById('startLevelSlider');
+        var maxLevelSlider = document.getElementById('maxLevelSlider');
+
+        startLevelSlider.addEventListener('input', function () {
+            startLevel = parseInt(startLevelSlider.value, 10);
+            if (startLevel > maxLevel) {
+                startLevel = maxLevel;
+            }
+            calculateMaterialsAndMora();
+        });
+
+        maxLevelSlider.addEventListener('input', function () {
+            maxLevel = parseInt(maxLevelSlider.value, 10);
+            if (maxLevel < startLevel) {
+                maxLevel = startLevel;
+            }
+            calculateMaterialsAndMora();
+        });
+    });
 </script>
 </body>
 </html>
