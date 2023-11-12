@@ -174,3 +174,11 @@ img.character-image, img.element-icon {
 .expbook-image {
     margin-left: 10px; /* Adjust margin as needed for spacing */
 }
+
+.button-style{
+    color:white;
+    background-color: transparent;
+    outline: none;
+    margin:10px
+
+}
